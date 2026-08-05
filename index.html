@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VYNORAE 2026 — National Hackathon on Emerging Technologies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fruktur:ital@0;1&family=Rubik+Broken+Fax&display=swap');
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <!-- Themes & Problem Domains — React carousel island -->
+    <link rel="stylesheet" href="themes-dist/themes-carousel.css">
+</head>
+<body>
+    <!-- Background Video and Overlay -->
+    <div class="video-container">
+        <video autoplay muted loop playsinline class="bg-video">
+            <source src="video/lv_0_20260804151312.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Sparks Canvas -->
+    <canvas id="sparksCanvas"></canvas>
+
+    <div class="app-container">
+        <!-- Navigation Bar -->
+        <header class="navbar" id="mainNavbar">
+            <div class="logo">
+                <span class="logo-text">VYNORAE</span>
+                <span class="logo-slash"></span>
+            </div>
+            
+            <!-- Hamburger button (mobile only) -->
+            <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#details" class="nav-link">DETAILS</a>
+                <a href="#about" class="nav-link">ABOUT</a>
+                <a href="#themes-section" class="nav-link">THEMES</a>
+                <a href="#eligibility" class="nav-link">ELIGIBILITY</a>
+                <a href="#timeline" class="nav-link">TIMELINE</a>
+                <a href="#rules" class="nav-link">RULES</a>
+                <a href="#judging" class="nav-link">JUDGING</a>
+                <a href="#coordinators" class="nav-link">COORDINATORS</a>
+                <a href="#prizes" class="nav-link">PRIZES</a>
+                <a href="#sponsors" class="nav-link">SPONSORS</a>
+            </nav>
+        </header>
+
+        <!-- Main Hero Section -->
+        <main class="hero-section">
+            <div class="hero-center-title">
+                <div class="hero-intro-wrapper">
+                    <h1 class="elegant-title">VYNORAE 2026</h1>
+                    <p class="hero-subtitle">National Hackathon on Emerging Technologies — Build. Innovate. Transform the Future.</p>
+                    <a href="https://unstop.com/p/vynorae-jaya-engineering-college-1731371" target="_blank" rel="noopener noreferrer" class="cta-btn-primary" id="heroCtaBtn">REGISTER NOW</a>
+
+                    <!-- Cyber HUD Countdown Timer (Pure CSS) -->
+                    <div class="cyber-timer-hud">
+                        <div class="hud-reticle top-reticle">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#00ff66" stroke-width="2">
+                                <circle cx="12" cy="12" r="7" />
+                                <circle cx="12" cy="12" r="3" />
+                                <line x1="12" y1="2" x2="12" y2="22" />
+                                <line x1="2" y1="12" x2="22" y2="12" />
+                            </svg>
+                        </div>
+
+                        <div class="hud-timer-grid">
+                            <!-- Days -->
+                            <div class="hud-unit">
+                                <div class="hud-digit-box">
+                                    <span id="timerDays">15</span>
+                                </div>
+                                <span class="hud-unit-label">DAYS</span>
+                            </div>
+
+                            <span class="hud-colon">:</span>
+
+                            <!-- Hours -->
+                            <div class="hud-unit">
+                                <div class="hud-digit-box">
+                                    <span id="timerHours">12</span>
+                                </div>
+                                <span class="hud-unit-label">HOURS</span>
+                            </div>
+
+                            <span class="hud-colon">:</span>
+
+                            <!-- Minutes -->
+                            <div class="hud-unit">
+                                <div class="hud-digit-box">
+                                    <span id="timerMinutes">45</span>
+                                </div>
+                                <span class="hud-unit-label">MINUTES</span>
+                            </div>
+
+                            <span class="hud-colon">:</span>
+
+                            <!-- Seconds -->
+                            <div class="hud-unit">
+                                <div class="hud-digit-box">
+                                    <span id="timerSeconds">00</span>
+                                </div>
+                                <span class="hud-unit-label">SECONDS</span>
+                            </div>
+                        </div>
+
+                        <div class="hud-reticle bottom-reticle">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#00ff66" stroke-width="2">
+                                <circle cx="12" cy="12" r="7" />
+                                <circle cx="12" cy="12" r="3" />
+                                <line x1="12" y1="2" x2="12" y2="22" />
+                                <line x1="2" y1="12" x2="22" y2="12" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator" id="scrollDownBtn">
+                <span>SCROLL DOWN</span>
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="chevron-down">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </div>
+        </main>
+
+        <!-- Details Section (Below the fold) -->
+        <section class="details-section" id="details">
+            <div class="section-bg-video-container">
+                <video autoplay muted loop playsinline class="section-bg-video">
+                    <source src="video/eventandsponsersection.mp4" type="video/mp4">
+                </video>
+                <div class="section-video-overlay"></div>
+            </div>
+            <div class="details-header-wrapper">
+                <h2 class="details-header">EVENT DETAILS</h2>
+            </div>
+            <div class="hud-grid">
+                <!-- Cell 1: Hackathon -->
+                <div class="hud-cell">
+                    <span class="hud-label">01 / HACKATHON</span>
+                    <span class="hud-value">VYNORAE 2026</span>
+                </div>
+                <!-- Cell 2: Theme -->
+                <div class="hud-cell">
+                    <span class="hud-label">02 / DOMAIN</span>
+                    <span class="hud-value">Emerging Technologies</span>
+                </div>
+                <!-- Cell 3: Date & Time -->
+                <div class="hud-cell">
+                    <span class="hud-label">03 / DATE & TIME</span>
+                    <span class="hud-value">Aug 21–22, 08:00 AM</span>
+                </div>
+                <!-- Cell 4: Venue -->
+                <div class="hud-cell">
+                    <span class="hud-label">04 / VENUE</span>
+                    <span class="hud-value">Auditorium, Jaya Engineering College</span>
+                </div>
+                <!-- Cell 5: Duration -->
+                <div class="hud-cell">
+                    <span class="hud-label">05 / DURATION</span>
+                    <span class="hud-value">24 Hours</span>
+                </div>
+                <!-- Cell 6: Stats -->
+                <div class="hud-cell stats-cell">
+                    <span class="hud-label">06 / TELEMETRY STATS</span>
+                    <div class="hud-stats-row">
+                        <div class="hud-stat-item">
+                            <span class="hud-stat-number">60+</span>
+                            <span class="hud-stat-label">TEAMS TARGET</span>
+                        </div>
+                        <div class="hud-stat-divider"></div>
+                        <div class="hud-stat-item">
+                            <span class="hud-stat-number">₹35K</span>
+                            <span class="hud-stat-label">PRIZE POOL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="details-header-wrapper">
+                <h2 class="details-header">ABOUT THE HACKATHON</h2>
+            </div>
+            
+            <div class="about-sequence">
+                <!-- Sequence Step 1: Purpose -->
+                <div class="sequence-panel">
+                    <div class="sequence-number">01</div>
+                    <div class="sequence-content">
+                        <span class="hud-tag">[ MISSION PURPOSE ]</span>
+                        <h3 class="sequence-title">About VYNORAE</h3>
+                        <p class="mission-highlight">
+                            VYNORAE is a 24-hour national-level hackathon that brings together passionate innovators, developers, designers, and problem solvers to build impactful technology solutions.
+                        </p>
+                        <p class="mission-text">
+                            Participants collaborate in teams, transform ideas into working prototypes, and present them before industry experts and academic leaders. Whether you're passionate about AI, Web3, Cybersecurity, Healthcare, or Open Innovation, VYNORAE is your platform to innovate.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Sequence Step 2: Objectives -->
+                <div class="sequence-panel">
+                    <div class="sequence-number">02</div>
+                    <div class="sequence-content">
+                        <span class="hud-tag">[ MISSION STATEMENT ]</span>
+                        <h3 class="sequence-title">Why VYNORAE?</h3>
+                        <ul class="objectives-list">
+                            <li>
+                                <span class="obj-title">Prototyping</span>
+                                <p class="obj-desc">Build real-world solutions under tight time constraints and launch working prototypes.</p>
+                            </li>
+                            <li>
+                                <span class="obj-title">Networking</span>
+                                <p class="obj-desc">Interact and gain insights from industry judges and technical mentors from leading companies.</p>
+                            </li>
+                            <li>
+                                <span class="obj-title">Rewards & Credentials</span>
+                                <p class="obj-desc">Compete for ₹35,000 prize pool and earn national participation certificates to boost your resume.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Sequence Step 3: Benefits -->
+                <div class="sequence-panel">
+                    <div class="sequence-number">03</div>
+                    <div class="sequence-content">
+                        <span class="hud-tag">[ PARTICIPANT BENEFITS ]</span>
+                        <h3 class="sequence-title">What You Gain</h3>
+                        <div class="benefits-row">
+                            <div class="benefit-card">
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="benefit-svg">
+                                    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                                    <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                                    <path d="M4 22h16"></path>
+                                    <path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34"></path>
+                                    <path d="M12 2a6 6 0 0 1 6 6v5a6 6 0 0 1-6 6 6 6 0 0 1-6-6V8a6 6 0 0 1 6-6z"></path>
+                                </svg>
+                                <div class="benefit-info">
+                                    <span class="benefit-title">₹35,000 Prize Pool</span>
+                                    <span class="benefit-desc">Cash prizes for winners, runners-up & special awards.</span>
+                                </div>
+                            </div>
+                            <div class="benefit-card">
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="benefit-svg">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                                <div class="benefit-info">
+                                    <span class="benefit-title">Industry Mentors</span>
+                                    <span class="benefit-desc">Learn from tech professionals, startup founders & researchers.</span>
+                                </div>
+                            </div>
+                            <div class="benefit-card">
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="benefit-svg">
+                                    <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline>
+                                    <path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
+                                </svg>
+                                <div class="benefit-info">
+                                    <span class="benefit-title">National Certificates</span>
+                                    <span class="benefit-desc">Digital & hardcopy credentials validating your participation.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Themes Section -->
+        <section class="themes-section" id="themes-section">
+            <div class="section-bg-video-container">
+                <video autoplay muted loop playsinline class="section-bg-video">
+                    <source src="video/themes_eventtimeline_mentorsession.mp4" type="video/mp4">
+                </video>
+                <div class="section-video-overlay"></div>
+            </div>
+            <div class="details-header-wrapper">
+                <h2 class="details-header">THEMES & PROBLEM DOMAINS</h2>
+                <p class="section-tagline">Build solutions in one of the following emerging technology domains.</p>
+            </div>
+            <!-- React Island: 3D coverflow carousel (replaces static themes-grid) -->
+            <div id="themes-carousel-root"></div>
+        </section>
+
+        <!-- Eligibility Section -->
+        <section class="eligibility-section" id="eligibility">
+            <div class="section-bg-video-container">
+                <video autoplay muted loop playsinline class="section-bg-video">
+                    <source src="video/eligibilyandrulesandguideliness.webm" type="video/webm">
+                </video>
+                <div class="section-video-overlay"></div>
+            </div>
+            <div class="details-header-wrapper">
+                <h2 class="details-header">ELIGIBILITY & RULES</h2>
+                <p class="section-tagline">Confirm your team status and parameters before registration.</p>
+            </div>
+            
+            <div class="eligibility-grid">
+                <!-- Left HUD Panel: Team Formation -->
+                <div class="rules-panel">
+                    <div class="rules-header-block">
+                        <div class="rules-header-text">
+                            <span class="hud-tag">[ FORMATION RULES ]</span>
+                            <h3 class="rules-title">Crew Configuration</h3>
+                        </div>
+                        <div class="hud-scanner-container">
+                            <div class="hud-scanner-grid"></div>
+                            <div class="hud-scanner-ring"></div>
+                            <div class="hud-scanner-line"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="rules-list">
+                        <div class="rule-item">
+                            <span class="rule-label">REGISTRATION_TYPE</span>
+                            <div class="rule-value-badge">
+                                <span class="badge-status-dot"></span>
+                                <span class="rule-value">Team Registration Only</span>
+                            </div>
+                        </div>
+                        <div class="rule-divider"></div>
+                        <div class="rule-item">
+                            <span class="rule-label">CREW_LIMIT_VAL</span>
+                            <div class="rule-value-badge">
+                                <span class="badge-status-dot"></span>
+                                <span class="rule-value">3 to 4 Members</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="rules-visual">
+                        <!-- Custom decorative tech lines to represent team composition -->
+                        <div class="visual-dots">
+                            <span class="dot active"></span>
+                            <span class="dot active"></span>
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <span class="visual-label">COMPOSITION TELEMETRY</span>
+                    </div>
+                </div>
+
+                <!-- Right Badges Grid: Eligible Groups -->
+                <div class="badges-grid">
+                    <!-- Badge 1 -->
+                    <div class="eligibility-badge">
+                        <span class="badge-code">TARGET // 01</span>
+                        <h4 class="badge-title">UG Engineering Students</h4>
+                        <p class="badge-desc">Undergraduate engineering, technology, and science students from any recognized institution.</p>
+                    </div>
+                    <!-- Badge 2 -->
+                    <div class="eligibility-badge">
+                        <span class="badge-code">TARGET // 02</span>
+                        <h4 class="badge-title">First-Year Welcome</h4>
+                        <p class="badge-desc">First-year students are encouraged to join and gain hands-on hackathon experience.</p>
+                    </div>
+                    <!-- Badge 3 -->
+                    <div class="eligibility-badge">
+                        <span class="badge-code">TARGET // 03</span>
+                        <h4 class="badge-title">Team Size: 3–4</h4>
+                        <p class="badge-desc">Teams must consist of 3 to 4 members. Solo participation is not permitted.</p>
+                    </div>
+                    <!-- Badge 4 -->
+                    <div class="eligibility-badge">
+                        <span class="badge-code">TARGET // 04</span>
+                        <h4 class="badge-title">Registration Fee</h4>
+                        <p class="badge-desc">₹200 per team, covering refreshments and lab costs throughout the 24-hour event.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="timeline-table-section" id="timeline">
+            <div class="section-bg-video-container">
+                <video autoplay muted loop playsinline class="section-bg-video">
+                    <source src="video/themes_eventtimeline_mentorsession.mp4" type="video/mp4">
+                </video>
+                <div class="section-video-overlay"></div>
+            </div>
+            <div class="details-header-wrapper">
+                <h2 class="details-header">6. EVENT TIMELINE</h2>
+                <p class="section-tagline">Key milestones leading up to and through VYNORAE 2026.</p>
+            </div>
+            
+            <div class="timeline-table-container">
+                <table class="hud-table">
+                    <thead>
+                        <tr>
+                            <th>STAGE</th>
+                            <th>DATE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span class="stage-tag">[ PHASE_01 ]</span>
+                                <span class="stage-name">Event Announcement</span>
+                            </td>
+                            <td class="date-val">Aug 05, 2026</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="stage-tag">[ PHASE_02 ]</span>
+                                <span class="stage-name">Registration Portal Opens</span>
+                            </td>
+                            <td class="date-val">Aug 08, 2026</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="stage-tag">[ PHASE_03 ]</span>
+                                <span class="stage-name">Registration Deadline</span>
+                            </td>
+                            <td class="date-val">Aug 18, 2026</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="stage-tag">[ PHASE_04 ]</span>
+                                <span class="stage-name">Problem Statement Release</span>
+                            </td>
+                            <td class="date-val">Aug 20, 2026</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="stage-tag">[ PHASE_05 ]</span>
+                                <span class="stage-name">Hackathon Launch / Check-in</span>
+                            </td>
+                            <td class="date-val">Aug 21, 08:00 AM</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="stage-tag">[ PHASE_06 ]</span>
+                                <span class="stage-name">Midnight Mentorship & Check</span>
+                            </td>
+                            <td class="date-val">Aug 21, 11:30 PM</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="stage-tag">[ PHASE_07 ]</span>
+                                <span class="stage-name">Final Code Freeze & Pitching</span>
+                            </td>
+                            <td class="date-val">Aug 22, 08:00 AM</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="stage-tag">[ PHASE_08 ]</span>
+                                <span class="stage-name">Winner Announcement</span>
+                            </td>
+                            <td class="date-val">Aug 22, 03:00 PM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Rules & Guidelines Section -->
+        <section class="rules-guidelines-section" id="rules">
+            <div class="section-bg-video-container">
+                <video autoplay muted loop playsinline class="section-bg-video">
+                    <source src="video/eligibilyandrulesandguideliness.webm" type="video/webm">
+                </video>
+                <div class="section-video-overlay"></div>
+            </div>
+            <div class="details-header-wrapper">
+                <h2 class="details-header">7. RULES & GUIDELINES</h2>
+                <p class="section-tagline">Operational protocols and compliance directives for all registered teams.</p>
+            </div>
+            
+            <div class="rules-grid">
+                <!-- Rule Card 1 -->
+                <div class="rule-card">
+                    <span class="rule-num">01 / TEAM_SIZE</span>
+                    <h3 class="rule-title">Team Size: 3–4</h3>
+                    <p class="rule-desc">Teams must consist of 3–4 registered students. Solo participation is not permitted under any circumstances.</p>
+                </div>
+                <!-- Rule Card 2 -->
+                <div class="rule-card">
+                    <span class="rule-num">02 / HARDWARE</span>
+                    <h3 class="rule-title">Bring Your Own Laptop</h3>
+                    <p class="rule-desc">Each team member must bring their own laptop, chargers, extension boxes, college ID card, and personal medication.</p>
+                </div>
+                <!-- Rule Card 3 -->
+                <div class="rule-card">
+                    <span class="rule-num">03 / CONNECTIVITY</span>
+                    <h3 class="rule-title">Wi-Fi Provided</h3>
+                    <p class="rule-desc">JEC will provide Wi-Fi access throughout the event. Backup mobile hotspots are highly recommended for uninterrupted connectivity.</p>
+                </div>
+                <!-- Rule Card 4 -->
+                <div class="rule-card">
+                    <span class="rule-num">04 / ORIGINALITY</span>
+                    <h3 class="rule-title">Original Work Only</h3>
+                    <p class="rule-desc">All code must be written during the 24-hour window. Plagiarism or pre-built projects will result in immediate disqualification.</p>
+                </div>
+                <!-- Rule Card 5 -->
+                <div class="rule-card">
+                    <span class="rule-num">05 / SUBMISSION</span>
+                    <h3 class="rule-title">GitHub Submission</h3>
+                    <p class="rule-desc">Final code must be pushed to a public GitHub repository with a proper README explanation before the code freeze deadline.</p>
+                </div>
+                <!-- Rule Card 6 -->
+                <div class="rule-card">
+                    <span class="rule-num">06 / PRESENTATION</span>
+                    <h3 class="rule-title">PPT Required</h3>
+                    <p class="rule-desc">A standard slide deck (PPT) is required detailing the problem, solution, architecture, and technology stack used.</p>
+                </div>
+                <!-- Rule Card 7 -->
+                <div class="rule-card" style="grid-column: span 2;">
+                    <span class="rule-num">07 / DEMO_VIDEO</span>
+                    <h3 class="rule-title">Demo Video Encouraged</h3>
+                    <p class="rule-desc">A 2-minute video walkthrough demonstrating the working prototype is highly encouraged alongside your final submission.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Judging Criteria Section -->
+        <section class="judging-criteria-section" id="judging">
+            <div class="details-header-wrapper">
+                <h2 class="details-header">8. JUDGING CRITERIA</h2>
+                <p class="section-tagline">Evaluation parameters and weightage used by the judging panel to score all submitted solutions.</p>
+            </div>
+            
+            <div class="judging-dashboard">
+                <!-- Left Console: Interactive Hologram Display -->
+                <div class="dashboard-display">
+                    <div class="hologram-scanner">
+                        <div class="scanner-grid"></div>
+                        <div class="scanner-laser"></div>
+                        
+                        <!-- SVG Telemetry Circle -->
+                        <div class="main-radial-gauge">
+                            <svg viewBox="0 0 100 100" class="gauge-svg">
+                                <circle class="gauge-bg" cx="50" cy="50" r="40" />
+                                <circle class="gauge-fill" cx="50" cy="50" r="40" id="mainGaugeFill" />
+                            </svg>
+                            <div class="gauge-readout">
+                                <span class="gauge-percent" id="mainGaugePercent">25%</span>
+                                <span class="gauge-label">WEIGHTAGE</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="display-content-card">
+                        <span class="display-tag" id="displayTag">[ EVAL_01 / INNO ]</span>
+                        <h3 class="display-title" id="displayTitle">Innovation</h3>
+                        <p class="display-desc" id="displayDesc">Uniqueness of the idea, creative application of emerging tech, and competitive edge over existing solutions.</p>
+                    </div>
+                </div>
+                
+                <!-- Right Console: Interactive Parameter List -->
+                <div class="dashboard-list">
+                    <!-- Row 1 -->
+                    <div class="dashboard-row active" data-id="01" data-tag="EVAL_01 / INNO" data-title="Innovation" data-weight="25" data-desc="Uniqueness of the idea, creative application of emerging tech, and competitive edge over existing solutions.">
+                        <span class="row-num">01</span>
+                        <div class="row-info">
+                            <span class="row-title">Innovation</span>
+                            <span class="row-mini-tag">SYS_EVAL</span>
+                        </div>
+                        <span class="row-value">25%</span>
+                        <div class="row-indicator-bar"><div class="fill" style="width: 25%;"></div></div>
+                    </div>
+                    
+                    <!-- Row 2 -->
+                    <div class="dashboard-row" data-id="02" data-tag="EVAL_02 / TECH" data-title="Technical Complexity" data-weight="25" data-desc="Architecture robustness, database integration, code quality, APIs, and overall stack integration depth.">
+                        <span class="row-num">02</span>
+                        <div class="row-info">
+                            <span class="row-title">Technical Complexity</span>
+                            <span class="row-mini-tag">SYS_EVAL</span>
+                        </div>
+                        <span class="row-value">25%</span>
+                        <div class="row-indicator-bar"><div class="fill" style="width: 25%;"></div></div>
+                    </div>
+                    
+                    <!-- Row 3 -->
+                    <div class="dashboard-row" data-id="03" data-tag="EVAL_03 / PROB" data-title="Problem Solving" data-weight="20" data-desc="Direct alignment with problem statements and practicality of the implementation approach.">
+                        <span class="row-num">03</span>
+                        <div class="row-info">
+                            <span class="row-title">Problem Solving</span>
+                            <span class="row-mini-tag">SYS_EVAL</span>
+                        </div>
+                        <span class="row-value">20%</span>
+                        <div class="row-indicator-bar"><div class="fill" style="width: 20%;"></div></div>
+                    </div>
+                    
+                    <!-- Row 4 -->
+                    <div class="dashboard-row" data-id="04" data-tag="EVAL_04 / UIUX" data-title="UI/UX Design" data-weight="10" data-desc="Ease of navigation, visual premium feel, responsiveness, and accessibility of the interface.">
+                        <span class="row-num">04</span>
+                        <div class="row-info">
+                            <span class="row-title">UI/UX Design</span>
+                            <span class="row-mini-tag">SYS_EVAL</span>
+                        </div>
+                        <span class="row-value">10%</span>
+                        <div class="row-indicator-bar"><div class="fill" style="width: 10%;"></div></div>
+                    </div>
+                    
+                    <!-- Row 5 -->
+                    <div class="dashboard-row" data-id="05" data-tag="EVAL_05 / PRES" data-title="Presentation & Pitch" data-weight="10" data-desc="Quality of the PPT, clear demo delivery, structure, and ability to handle judge Q&A effectively.">
+                        <span class="row-num">05</span>
+                        <div class="row-info">
+                            <span class="row-title">Presentation & Pitch</span>
+                            <span class="row-mini-tag">SYS_EVAL</span>
+                        </div>
+                        <span class="row-value">10%</span>
+                        <div class="row-indicator-bar"><div class="fill" style="width: 10%;"></div></div>
+                    </div>
+                    
+                    <!-- Row 6 -->
+                    <div class="dashboard-row" data-id="06" data-tag="EVAL_06 / SCAL" data-title="Scalability & Future Scope" data-weight="10" data-desc="Feasibility of scaling, cost architecture logic, and business roadmap viability for the solution.">
+                        <span class="row-num">06</span>
+                        <div class="row-info">
+                            <span class="row-title">Scalability & Future Scope</span>
+                            <span class="row-mini-tag">SYS_EVAL</span>
+                        </div>
+                        <span class="row-value">10%</span>
+                        <div class="row-indicator-bar"><div class="fill" style="width: 10%;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Coordinators Section -->
+        <section class="mentor-sessions-section" id="coordinators">
+            <div class="section-bg-video-container">
+                <video autoplay muted loop playsinline class="section-bg-video">
+                    <source src="video/themes_eventtimeline_mentorsession.mp4" type="video/mp4">
+                </video>
+                <div class="section-video-overlay"></div>
+            </div>
+            <div class="details-header-wrapper">
+                <h2 class="details-header">10. EVENT COORDINATORS</h2>
+                <p class="section-tagline">Connect with student and event coordinators across technical tracks, logistics, design, and operations throughout VYNORAE 2026.</p>
+            </div>
+            
+            <div class="mentors-grid">
+                <!-- Coordinator 1: Nisanth I -->
+                <div class="mentor-card">
+                    <div class="mentor-card-header">
+                        <span class="mentor-tag">[ COORDINATOR // 01 ]</span>
+                        <div class="status-indicator">
+                            <span class="status-pulse green"></span>
+                            <span class="status-text">ONLINE</span>
+                        </div>
+                    </div>
+                    <div class="mentor-profile">
+                        <div class="mentor-avatar-frame">
+                            <img src="images/mentors/nisanth I.jpeg" alt="Nisanth I" class="mentor-avatar">
+                            <div class="mentor-avatar-glow"></div>
+                        </div>
+                        <div class="mentor-info">
+                            <h3 class="mentor-title">Nisanth I</h3>
+                            <span class="mentor-role">Technical Coordinator</span>
+                        </div>
+                    </div>
+                    <p class="mentor-desc">Overseeing full-stack technical tracks, system infrastructure, and developer workspace operations.</p>
+                    <div class="mentor-meta">
+                        <span class="meta-label">FOCUS:</span>
+                        <span class="meta-value">Tech &amp; Architecture</span>
+                    </div>
+                </div>
+
+                <!-- Coordinator 2: Naveen Pandian N -->
+                <div class="mentor-card">
+                    <div class="mentor-card-header">
+                        <span class="mentor-tag">[ COORDINATOR // 02 ]</span>
+                        <div class="status-indicator">
+                            <span class="status-pulse green"></span>
+                            <span class="status-text">ONLINE</span>
+                        </div>
+                    </div>
+                    <div class="mentor-profile">
+                        <div class="mentor-avatar-frame">
+                            <img src="images/mentors/naveen pandian N.jpeg" alt="Naveen Pandian N" class="mentor-avatar">
+                            <div class="mentor-avatar-glow"></div>
+                        </div>
+                        <div class="mentor-info">
+                            <h3 class="mentor-title">Naveen Pandian N</h3>
+                            <span class="mentor-role">Event Coordinator</span>
+                        </div>
+                    </div>
+                    <p class="mentor-desc">Coordinating emerging tech track activities, team onboarding, and AI challenge statement workflows.</p>
+                    <div class="mentor-meta">
+                        <span class="meta-label">FOCUS:</span>
+                        <span class="meta-value">Emerging Tech &amp; AI</span>
+                    </div>
+                </div>
+
+                <!-- Coordinator 3: Sakthikumar M -->
+                <div class="mentor-card">
+                    <div class="mentor-card-header">
+                        <span class="mentor-tag">[ COORDINATOR // 03 ]</span>
+                        <div class="status-indicator">
+                            <span class="status-pulse green"></span>
+                            <span class="status-text">ONLINE</span>
+                        </div>
+                    </div>
+                    <div class="mentor-profile">
+                        <div class="mentor-avatar-frame">
+                            <img src="images/mentors/sakthikumar.jpeg" alt="Sakthikumar M" class="mentor-avatar">
+                            <div class="mentor-avatar-glow"></div>
+                        </div>
+                        <div class="mentor-info">
+                            <h3 class="mentor-title">Sakthikumar M</h3>
+                            <span class="mentor-role">Domain Coordinator</span>
+                        </div>
+                    </div>
+                    <p class="mentor-desc">Managing domain submissions, UI/UX evaluation parameters, and design review logistics.</p>
+                    <div class="mentor-meta">
+                        <span class="meta-label">FOCUS:</span>
+                        <span class="meta-value">UI/UX &amp; Scalability</span>
+                    </div>
+                </div>
+
+                <!-- Coordinator 4: Yuvaraj S -->
+                <div class="mentor-card">
+                    <div class="mentor-card-header">
+                        <span class="mentor-tag">[ COORDINATOR // 04 ]</span>
+                        <div class="status-indicator">
+                            <span class="status-pulse green"></span>
+                            <span class="status-text">ONLINE</span>
+                        </div>
+                    </div>
+                    <div class="mentor-profile">
+                        <div class="mentor-avatar-frame">
+                            <img src="images/mentors/yuvaraj S.jpeg" alt="Yuvaraj S" class="mentor-avatar">
+                            <div class="mentor-avatar-glow"></div>
+                        </div>
+                        <div class="mentor-info">
+                            <h3 class="mentor-title">Yuvaraj S</h3>
+                            <span class="mentor-role">Operations Coordinator</span>
+                        </div>
+                    </div>
+                    <p class="mentor-desc">Handling cloud infrastructure access, lab logistics, network management, and participant support.</p>
+                    <div class="mentor-meta">
+                        <span class="meta-label">FOCUS:</span>
+                        <span class="meta-value">Cloud &amp; Security</span>
+                    </div>
+                </div>
+
+                <!-- Coordinator 5: Hariprasanth D -->
+                <div class="mentor-card">
+                    <div class="mentor-card-header">
+                        <span class="mentor-tag">[ COORDINATOR // 05 ]</span>
+                        <div class="status-indicator">
+                            <span class="status-pulse green"></span>
+                            <span class="status-text">ONLINE</span>
+                        </div>
+                    </div>
+                    <div class="mentor-profile">
+                        <div class="mentor-avatar-frame">
+                            <img src="images/mentors/hariprasanth D.jpeg" alt="Hariprasanth D" class="mentor-avatar">
+                            <div class="mentor-avatar-glow"></div>
+                        </div>
+                        <div class="mentor-info">
+                            <h3 class="mentor-title">Hariprasanth D</h3>
+                            <span class="mentor-role">Lead Coordinator</span>
+                        </div>
+                    </div>
+                    <p class="mentor-desc">Directing overall hackathon operations, pitch scheduling, judge panel logistics, and ceremony timelines.</p>
+                    <div class="mentor-meta">
+                        <span class="meta-label">FOCUS:</span>
+                        <span class="meta-value">Pitch &amp; Operations</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prizes Section -->
+        <section class="prizes-section" id="prizes">
+            <div class="details-header-wrapper">
+                <h2 class="details-header">14. PRIZES & AWARDS</h2>
+                <p class="section-tagline">Telemetry matrix of VYNORAE 2026 prize distribution. High-tier prototypes unlock corresponding reward parameters.</p>
+            </div>
+
+            <!-- Top 3 Podium -->
+            <div class="podium-row">
+                <!-- 2nd Place -->
+                <div class="prize-podium-card silver">
+                    <div class="card-bg-grid"></div>
+                    <div class="prize-rank-badge">RANK // 02</div>
+                    <div class="prize-medal-wrap">
+                        <img src="silver_trophy.png" alt="Silver Trophy" class="prize-image">
+                        <div class="prize-medal-glow silver-glow"></div>
+                    </div>
+                    <h3 class="prize-position">Runner-up</h3>
+                    <div class="prize-amount">₹10,000</div>
+                    <ul class="prize-perks">
+                        <li>
+                            <span class="perk-tag">ASSET</span>
+                            <span class="perk-text">Runner-up Trophy</span>
+                        </li>
+                        <li>
+                            <span class="perk-tag">STATUS</span>
+                            <span class="perk-text">Certificate of Merit</span>
+                        </li>
+                        <li>
+                            <span class="perk-tag">GEAR</span>
+                            <span class="perk-text">Tech Goodies Pack</span>
+                        </li>
+                    </ul>
+                    <div class="prize-bar silver-bar"></div>
+                    <div class="card-corner top-left"></div>
+                    <div class="card-corner bottom-right"></div>
+                </div>
+
+                <!-- 1st Place -->
+                <div class="prize-podium-card gold featured">
+                    <div class="card-bg-grid"></div>
+                    <div class="prize-rank-badge gold-badge">RANK // 01</div>
+                    <div class="prize-badge-label">GRAND WINNER</div>
+                    <div class="prize-medal-wrap">
+                        <img src="gold_trophy.png" alt="Gold Trophy" class="prize-image featured-image">
+                        <div class="prize-medal-glow gold-glow"></div>
+                    </div>
+                    <h3 class="prize-position">First Prize</h3>
+                    <div class="prize-amount gold-amount">₹20,000</div>
+                    <ul class="prize-perks">
+                        <li>
+                            <span class="perk-tag active">ASSET</span>
+                            <span class="perk-text text-gold">Overall Winner Trophy</span>
+                        </li>
+                        <li>
+                            <span class="perk-tag active">STATUS</span>
+                            <span class="perk-text text-gold">Certificate of Merit</span>
+                        </li>
+                        <li>
+                            <span class="perk-tag active">CAREER</span>
+                            <span class="perk-text text-gold">Fast-track Interviews</span>
+                        </li>
+                    </ul>
+                    <div class="prize-bar gold-bar"></div>
+                    <div class="card-corner top-left gold-corners"></div>
+                    <div class="card-corner bottom-right gold-corners"></div>
+                </div>
+
+                <!-- 3rd Place -->
+                <div class="prize-podium-card bronze">
+                    <div class="card-bg-grid"></div>
+                    <div class="prize-rank-badge">RANK // 03</div>
+                    <div class="prize-medal-wrap">
+                        <img src="bronze_trophy.png" alt="Bronze Trophy" class="prize-image">
+                        <div class="prize-medal-glow bronze-glow"></div>
+                    </div>
+                    <h3 class="prize-position">2nd Runner-up</h3>
+                    <div class="prize-amount">₹5,000</div>
+                    <ul class="prize-perks">
+                        <li>
+                            <span class="perk-tag">ASSET</span>
+                            <span class="perk-text">Bronze Trophy</span>
+                        </li>
+                        <li>
+                            <span class="perk-tag">STATUS</span>
+                            <span class="perk-text">Certificate of Merit</span>
+                        </li>
+                        <li>
+                            <span class="perk-tag">GEAR</span>
+                            <span class="perk-text">Tech Goodies Pack</span>
+                        </li>
+                    </ul>
+                    <div class="prize-bar bronze-bar"></div>
+                    <div class="card-corner top-left"></div>
+                    <div class="card-corner bottom-right"></div>
+                </div>
+            </div>
+
+            <!-- Special Awards Row -->
+            <div class="special-awards-grid">
+                <!-- Best Innovation -->
+                <div class="special-award-card">
+                    <div class="award-icon-wrap">
+                        <svg class="cyber-award-svg" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#00ff66" stroke-width="1.5">
+                            <rect x="5" y="5" width="14" height="14" rx="2" fill="rgba(0, 255, 102, 0.05)" />
+                            <path d="M9 9h6v6H9z" stroke-dasharray="2 2" />
+                            <path d="M9 1v4M15 1v4M9 19v4M15 19v4M1 9h4M1 15h4M19 9h4M19 15h4" stroke-linecap="round" />
+                        </svg>
+                        <div class="award-icon-ring"></div>
+                    </div>
+                    <div class="award-info">
+                        <span class="award-cat">[ CATEGORY // INNOVATION ]</span>
+                        <h4 class="award-title">Best Innovation</h4>
+                        <p class="award-desc">Recognizes the most original, creative, and disruptive solution presented at VYNORAE 2026.</p>
+                        <span class="award-reward">🏆 SPECIAL TROPHY + MEDAL</span>
+                    </div>
+                    <div class="card-decor-dot"></div>
+                </div>
+
+                <!-- Best UI/UX -->
+                <div class="special-award-card">
+                    <div class="award-icon-wrap">
+                        <svg class="cyber-award-svg" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#00ff66" stroke-width="1.5">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke-dasharray="4 2" />
+                            <path d="M12 6V18M6 12H18" stroke-linecap="round" />
+                            <circle cx="12" cy="12" r="4" fill="rgba(0, 255, 102, 0.1)" />
+                        </svg>
+                        <div class="award-icon-ring"></div>
+                    </div>
+                    <div class="award-info">
+                        <span class="award-cat">[ CATEGORY // DESIGN ]</span>
+                        <h4 class="award-title">Best UI/UX</h4>
+                        <p class="award-desc">Awarded to the team delivering the most polished, intuitive, and premium user interface and experience.</p>
+                        <span class="award-reward">🏆 SPECIAL TROPHY + MEDAL</span>
+                    </div>
+                    <div class="card-decor-dot"></div>
+                </div>
+
+                <!-- Best Social Impact -->
+                <div class="special-award-card">
+                    <div class="award-icon-wrap">
+                        <svg class="cyber-award-svg" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#00ff66" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M3.6 9h16.8M3.6 15h16.8M12 3a15.3 15.3 0 0 1 4 9 15.3 15.3 0 0 1-4 9 15.3 15.3 0 0 1-4-9 15.3 15.3 0 0 1 4-9z" />
+                        </svg>
+                        <div class="award-icon-ring"></div>
+                    </div>
+                    <div class="award-info">
+                        <span class="award-cat">[ CATEGORY // IMPACT ]</span>
+                        <h4 class="award-title">Best Social Impact</h4>
+                        <p class="award-desc">Honors the project that addresses a meaningful real-world challenge with the greatest potential societal impact.</p>
+                        <span class="award-reward">🏆 SPECIAL TROPHY + MEDAL</span>
+                    </div>
+                    <div class="card-decor-dot"></div>
+                </div>
+
+                <!-- Participation Certificate -->
+                <div class="special-award-card cert-card">
+                    <div class="award-icon-wrap">
+                        <svg class="cyber-award-svg" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#64c8ff" stroke-width="1.5">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" fill="rgba(100, 200, 255, 0.05)" />
+                            <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke-linecap="round" />
+                        </svg>
+                        <div class="award-icon-ring cert-ring"></div>
+                    </div>
+                    <div class="award-info">
+                        <span class="award-cat">[ ELIGIBILITY // ALL ]</span>
+                        <h4 class="award-title">Participation Certificate</h4>
+                        <p class="award-desc">Every active participant receives a national-level certificate of participation in both digital and hardcopy format.</p>
+                        <span class="award-reward cert-reward">✅ ALL REGISTERED TEAMS</span>
+                    </div>
+                    <div class="card-decor-dot cert-dot"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sponsors Section -->
+        <section class="sponsors-section" id="sponsors">
+            <div class="section-bg-video-container">
+                <video autoplay muted loop playsinline class="section-bg-video">
+                    <source src="video/eventandsponsersection.mp4" type="video/mp4">
+                </video>
+                <div class="section-video-overlay"></div>
+            </div>
+            <div class="details-header-wrapper">
+                <h2 class="details-header">15. SPONSORS & PARTNERS</h2>
+                <p class="section-tagline">Telemetry matrix of VYNORAE 2026 partner integrations. Services are provisioned for all registered developer workspaces.</p>
+            </div>
+
+            <!-- Auto-scrolling logo strip -->
+            <div class="logo-strip-container">
+                <div class="logo-strip-track">
+                    <!-- Set 1 -->
+                    <div class="logo-badge-item">
+                        <span class="badge-icon-dot"></span>
+                        <span class="badge-lbl">AWS</span>
+                    </div>
+                    <div class="logo-badge-item">
+                        <span class="badge-icon-dot"></span>
+                        <span class="badge-lbl">GOOGLE</span>
+                    </div>
+                    <div class="logo-badge-item">
+                        <span class="badge-icon-dot"></span>
+                        <span class="badge-lbl">MICROSOFT</span>
+                    </div>
+                    <div class="logo-badge-item">
+                        <span class="badge-icon-dot"></span>
+                        <span class="badge-lbl">GITHUB</span>
+                    </div>
+                    <div class="logo-badge-item">
+                        <span class="badge-icon-dot"></span>
+                        <span class="badge-lbl">VERCEL</span>
+                    </div>
+                    <div class="logo-badge-item">
+                        <span class="badge-icon-dot"></span>
+                        <span class="badge-lbl">MONGODB</span>
+                    </div>
+                    <div class="logo-badge-item">
+                        <span class="badge-icon-dot"></span>
+                        <span class="badge-lbl">OPENAI</span>
+                    </div>
+                    <div class="logo-badge-item">
+                        <span class="badge-icon-dot"></span>
+                        <span class="badge-lbl">POSTMAN</span>
+                    </div>
+                    <!-- Set 2 -->
+                    <div class="logo-badge-item">
+                        <span class="badge-icon-dot"></span>
+                        <span class="badge-lbl">AWS</span>
+                    </div>
+                    <div class="logo-badge-item">
+                        <span class="badge-icon-dot"></span>
+                        <span class="badge-lbl">GOOGLE</span>
+                    </div>
+                    <div class="logo-badge-item">
+                        <span class="badge-icon-dot"></span>
+                        <span class="badge-lbl">MICROSOFT</span>
+                    </div>
+                    <div class="logo-badge-item">
+                        <span class="badge-icon-dot"></span>
+                        <span class="badge-lbl">GITHUB</span>
+                    </div>
+                    <div class="logo-badge-item">
+                        <span class="badge-icon-dot"></span>
+                        <span class="badge-lbl">VERCEL</span>
+                    </div>
+                    <div class="logo-badge-item">
+                        <span class="badge-icon-dot"></span>
+                        <span class="badge-lbl">MONGODB</span>
+                    </div>
+                    <div class="logo-badge-item">
+                        <span class="badge-icon-dot"></span>
+                        <span class="badge-lbl">OPENAI</span>
+                    </div>
+                    <div class="logo-badge-item">
+                        <span class="badge-icon-dot"></span>
+                        <span class="badge-lbl">POSTMAN</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sponsors-grid">
+                <!-- Group 1: Prize Sponsors -->
+                <div class="sponsors-card">
+                    <div class="card-bg-grid"></div>
+                    <span class="sponsor-cat-label">PLATINUM // PRIZE_REWARDS</span>
+                    <h3 class="sponsor-card-title">Prize Sponsors</h3>
+                    <p class="sponsor-card-desc">Providing the ₹35,000 cash rewards, overall winner trophies, and fast-track engineering internship tracks.</p>
+                    <div class="sponsor-partners-list">
+                        <div class="partner-hud-tag">
+                            <span class="hud-tag-indicator green"></span>
+                            <span class="hud-tag-name">Tech Giants Corp</span>
+                            <span class="hud-tag-val">ACTIVE</span>
+                        </div>
+                        <div class="partner-hud-tag">
+                            <span class="hud-tag-indicator green"></span>
+                            <span class="hud-tag-name">Web3 Innovations</span>
+                            <span class="hud-tag-val">ACTIVE</span>
+                        </div>
+                        <div class="partner-hud-tag">
+                            <span class="hud-tag-indicator green"></span>
+                            <span class="hud-tag-name">CyberGuard Labs</span>
+                            <span class="hud-tag-val">ACTIVE</span>
+                        </div>
+                    </div>
+                    <div class="card-corner top-left"></div>
+                    <div class="card-corner bottom-right"></div>
+                </div>
+
+                <!-- Group 2: Technology Partners -->
+                <div class="sponsors-card">
+                    <div class="card-bg-grid"></div>
+                    <span class="sponsor-cat-label">INTEGRATION // API_PROVISION</span>
+                    <h3 class="sponsor-card-title">Technology Partners</h3>
+                    <p class="sponsor-card-desc">Deploying developer sandbox environments, database structures, and premium LLM model endpoints.</p>
+                    <div class="sponsor-partners-list">
+                        <div class="partner-hud-tag">
+                            <span class="hud-tag-indicator green"></span>
+                            <span class="hud-tag-name">AWS Developer</span>
+                            <span class="hud-tag-val">PROVISIONED</span>
+                        </div>
+                        <div class="partner-hud-tag">
+                            <span class="hud-tag-indicator green"></span>
+                            <span class="hud-tag-name">MongoDB Atlas</span>
+                            <span class="hud-tag-val">PROVISIONED</span>
+                        </div>
+                        <div class="partner-hud-tag">
+                            <span class="hud-tag-indicator green"></span>
+                            <span class="hud-tag-name">OpenAI API Partner</span>
+                            <span class="hud-tag-val">PROVISIONED</span>
+                        </div>
+                    </div>
+                    <div class="card-corner top-left"></div>
+                    <div class="card-corner bottom-right"></div>
+                </div>
+
+                <!-- Group 3: Community Partners -->
+                <div class="sponsors-card large-span">
+                    <div class="card-bg-grid"></div>
+                    <span class="sponsor-cat-label">COLLABORATION // STUDENT_OUTREACH</span>
+                    <h3 class="sponsor-card-title">Community Partners</h3>
+                    <p class="sponsor-card-desc">Assisting with digital hackathon promotion, campus operations, hospitality hosting, and mentoring channels coordination.</p>
+                    <div class="sponsor-partners-list">
+                        <div class="partner-hud-tag">
+                            <span class="hud-tag-indicator green"></span>
+                            <span class="hud-tag-name">JEC CSE Student Club</span>
+                            <span class="hud-tag-val">ESTABLISHED</span>
+                        </div>
+                        <div class="partner-hud-tag">
+                            <span class="hud-tag-indicator green"></span>
+                            <span class="hud-tag-name">Devs Chennai Meetup</span>
+                            <span class="hud-tag-val">ESTABLISHED</span>
+                        </div>
+                        <div class="partner-hud-tag">
+                            <span class="hud-tag-indicator green"></span>
+                            <span class="hud-tag-name">Emerging Tech Student Network</span>
+                            <span class="hud-tag-val">ESTABLISHED</span>
+                        </div>
+                    </div>
+                    <div class="card-corner top-left"></div>
+                    <div class="card-corner bottom-right"></div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Floating UI controls -->
+        <footer class="floating-controls">
+            <button class="refresh-btn" aria-label="Refresh Page">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+                </svg>
+            </button>
+        </footer>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close Video">&times;</button>
+            <div class="modal-video-wrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- Themes carousel bundle (React IIFE — self-mounts into #themes-carousel-root) -->
+    <script src="themes-dist/themes-carousel.js"></script>
+</body>
+</html>
