@@ -2,7 +2,7 @@ import { CoverflowCarousel, type CoverflowSlide } from "@/components/ui/coverflo
 
 const THEME_SLIDES: CoverflowSlide[] = [
   {
-    src: "images/themes/ai.png",
+    src: "images/themes_idea/AI.png",
     alt: "Futuristic artificial intelligence neural brain core",
     title: "AI",
     subtitle: "INTEL_CORE // 01",
@@ -13,7 +13,7 @@ const THEME_SLIDES: CoverflowSlide[] = [
     ],
   },
   {
-    src: "images/themes/web3.png",
+    src: "images/themes_idea/W3.png",
     alt: "Decentralized blockchain network node",
     title: "Web3",
     subtitle: "WEB3_CHAIN // 02",
@@ -24,7 +24,7 @@ const THEME_SLIDES: CoverflowSlide[] = [
     ],
   },
   {
-    src: "images/themes/cybersecurity.png",
+    src: "images/themes_idea/Cybersecurity.png",
     alt: "Digital tech security shield",
     title: "Cybersecurity",
     subtitle: "SECURE_SHIELD // 03",
@@ -35,7 +35,7 @@ const THEME_SLIDES: CoverflowSlide[] = [
     ],
   },
   {
-    src: "images/themes/healthcare.png",
+    src: "images/themes_idea/Healthcare.png",
     alt: "Futuristic medical diagnosis and health graphics",
     title: "Healthcare",
     subtitle: "BIO_METRICS // 04",
@@ -46,7 +46,7 @@ const THEME_SLIDES: CoverflowSlide[] = [
     ],
   },
   {
-    src: "images/themes/legaltech.png",
+    src: "images/themes_idea/Legal Tech.png",
     alt: "Smart contract scroll and scales of justice",
     title: "Legal Tech",
     subtitle: "LEGAL_TECH // 05",
@@ -57,7 +57,7 @@ const THEME_SLIDES: CoverflowSlide[] = [
     ],
   },
   {
-    src: "images/themes/fintech.png",
+    src: "images/themes_idea/Fintech.png",
     alt: "Financial charts and stock market indicators",
     title: "FinTech",
     subtitle: "FIN_SYSTEM // 06",
@@ -68,7 +68,7 @@ const THEME_SLIDES: CoverflowSlide[] = [
     ],
   },
   {
-    src: "images/themes/openinnovation.png",
+    src: "images/themes_idea/Open Innovations.png",
     alt: "Fusion core representing creative innovation ideas",
     title: "Open Innovations",
     subtitle: "OPEN_CORE // 07",
