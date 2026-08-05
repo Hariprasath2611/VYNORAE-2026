@@ -1,14 +1,10 @@
 import { CoverflowCarousel, type CoverflowSlide } from "@/components/ui/coverflow-carousel";
 
-// Unsplash images sized 640×640, cropped to square, themed to each domain
-const UNSPLASH = (id: string) =>
-  `https://images.unsplash.com/photo-${id}?w=640&h=640&fit=crop&q=80&auto=format`;
-
 const THEME_SLIDES: CoverflowSlide[] = [
   {
-    src: UNSPLASH("1485827404703-89b55fcc595e"),
-    alt: "Humanoid robot representing artificial intelligence and machine learning",
-    title: "Artificial Intelligence",
+    src: "images/themes/ai.png",
+    alt: "Futuristic artificial intelligence neural brain core",
+    title: "AI",
     subtitle: "INTEL_CORE // 01",
     meta: [
       { label: "Tag", value: "INTEL_CORE" },
@@ -17,19 +13,19 @@ const THEME_SLIDES: CoverflowSlide[] = [
     ],
   },
   {
-    src: UNSPLASH("1639762681485-074b7f938ba0"),
-    alt: "Abstract blockchain network of glowing nodes and connecting lines",
-    title: "Web3 & Blockchain",
+    src: "images/themes/web3.png",
+    alt: "Decentralized blockchain network node",
+    title: "Web3",
     subtitle: "WEB3_CHAIN // 02",
     meta: [
       { label: "Tag", value: "WEB3_CHAIN" },
       { label: "Domain", value: "DeFi / NFTs / dApps" },
-      { label: "Focus", value: "Decentralised Web" },
+      { label: "Focus", value: "Decentralized Web" },
     ],
   },
   {
-    src: UNSPLASH("1550751827-4bd374c3f58b"),
-    alt: "Digital lock and binary code illustrating cybersecurity defence",
+    src: "images/themes/cybersecurity.png",
+    alt: "Digital tech security shield",
     title: "Cybersecurity",
     subtitle: "SECURE_SHIELD // 03",
     meta: [
@@ -39,8 +35,8 @@ const THEME_SLIDES: CoverflowSlide[] = [
     ],
   },
   {
-    src: UNSPLASH("1576091160399-112ba8d25d1d"),
-    alt: "Futuristic medical lab with glowing digital health data displays",
+    src: "images/themes/healthcare.png",
+    alt: "Futuristic medical diagnosis and health graphics",
     title: "Healthcare",
     subtitle: "BIO_METRICS // 04",
     meta: [
@@ -50,8 +46,8 @@ const THEME_SLIDES: CoverflowSlide[] = [
     ],
   },
   {
-    src: UNSPLASH("1589829085413-56de8ae18c73"),
-    alt: "Justice scales on a desk beside a laptop representing legal technology",
+    src: "images/themes/legaltech.png",
+    alt: "Smart contract scroll and scales of justice",
     title: "Legal Tech",
     subtitle: "LEGAL_TECH // 05",
     meta: [
@@ -61,8 +57,8 @@ const THEME_SLIDES: CoverflowSlide[] = [
     ],
   },
   {
-    src: UNSPLASH("1611974789855-9c2a0a7236a3"),
-    alt: "Stock market charts and financial data on multiple glowing screens",
+    src: "images/themes/fintech.png",
+    alt: "Financial charts and stock market indicators",
     title: "FinTech",
     subtitle: "FIN_SYSTEM // 06",
     meta: [
@@ -72,9 +68,9 @@ const THEME_SLIDES: CoverflowSlide[] = [
     ],
   },
   {
-    src: UNSPLASH("1522202176988-66273c2fd55f"),
-    alt: "Diverse team collaborating around a table with creative ideas",
-    title: "Open Innovation",
+    src: "images/themes/openinnovation.png",
+    alt: "Fusion core representing creative innovation ideas",
+    title: "Open Innovations",
     subtitle: "OPEN_CORE // 07",
     meta: [
       { label: "Tag", value: "OPEN_CORE" },
