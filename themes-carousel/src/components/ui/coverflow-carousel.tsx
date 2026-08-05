@@ -279,7 +279,7 @@ export function CoverflowCarousel({
                   src={slide.src}
                   alt={slide.alt}
                   draggable={false}
-                  className="h-full w-full select-none object-cover"
+                  className="h-full w-full select-none object-contain bg-black"
                 />
               </div>
             ))}
