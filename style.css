@@ -362,6 +362,22 @@ body {
     transform: translateY(-2px);
 }
 
+.cta-tagline {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-top: -5px;
+    font-family: var(--font-ui);
+    animation: fadeInCta 3.2s ease-out;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.cta-tagline-highlight {
+    color: var(--accent-green);
+    text-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
+    font-weight: 700 !important;
+}
+
 @keyframes fadeInSubtitle {
     from { opacity: 0; transform: translateY(12px); }
     to { opacity: 1; transform: translateY(0); }
