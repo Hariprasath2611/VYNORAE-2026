@@ -187,14 +187,14 @@ body {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: clamp(14px, 1.8vw, 32px);
 }
 
 .nav-link {
     font-family: var(--font-ui);
     font-weight: 700;
-    font-size: 15px;
-    letter-spacing: 1.5px;
+    font-size: 13.5px;
+    letter-spacing: 1px;
     color: var(--text-muted);
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -3484,13 +3484,6 @@ body {
         padding: 20px 24px 40px 24px;
     }
 
-    /* Nav  */
-    .nav-links {
-        gap: 18px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
     /* Sections */
     .details-section,
     .about-section,
@@ -3552,14 +3545,9 @@ body {
 }
 
 /* ================================================
-   MOBILE  (max-width: 768px)
+   RESPONSIVE NAVBAR BREAKPOINT (max-width: 1150px)
    ================================================ */
-@media (max-width: 768px) {
-    /* --- Container --- */
-    .app-container {
-        padding: 16px 16px 40px 16px;
-    }
-
+@media (max-width: 1150px) {
     /* --- Navbar --- */
     .navbar {
         flex-direction: row;
@@ -3615,6 +3603,16 @@ body {
     /* hide search on mobile */
     .search-box {
         display: none;
+    }
+}
+
+/* ================================================
+   MOBILE  (max-width: 768px)
+   ================================================ */
+@media (max-width: 768px) {
+    /* --- Container --- */
+    .app-container {
+        padding: 16px 16px 40px 16px;
     }
 
     /* --- Hero --- */
