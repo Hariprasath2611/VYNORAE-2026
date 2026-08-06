@@ -2273,12 +2273,12 @@ body {
 }
 
 .mentor-card:hover .mentor-avatar-glow {
-    opacity: 1;
+    opacity: 0;
 }
 
 .mentor-card:hover .mentor-avatar-frame {
     transform: scale(1.06);
-    box-shadow: 0 0 22px var(--accent-green-glow);
+    box-shadow: none;
 }
 
 .mentor-info {
