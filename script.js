@@ -1,4 +1,63 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // 0. Lazy-loading videos & Hero video deferral
+    // Defer hero video loading until window load to prioritize critical styling, scripting, and React rendering
+    window.addEventListener('load', () => {
+        const heroVideo = document.querySelector('video.hero-lazy-video');
+        if (heroVideo) {
+            const source = heroVideo.querySelector('source');
+            if (source && source.dataset.src) {
+                source.src = source.dataset.src;
+                heroVideo.load();
+                heroVideo.play().catch(err => {
+                    console.warn("Hero video autoplay failed/blocked:", err);
+                });
+            }
+        }
+    });
+
+    // Intersection Observer for below-the-fold lazy background videos
+    if ('IntersectionObserver' in window) {
+        const lazyVideoObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const video = entry.target;
+                    const sources = video.querySelectorAll('source');
+                    sources.forEach(source => {
+                        if (source.dataset.src) {
+                            source.src = source.dataset.src;
+                        }
+                    });
+                    video.load();
+                    video.play().catch(err => {
+                        console.warn("Lazy video autoplay failed/blocked:", err);
+                    });
+                    video.classList.remove('lazy-video');
+                    observer.unobserve(video);
+                }
+            });
+        }, {
+            rootMargin: '200px 0px', // Load videos 200px before they enter the viewport
+            threshold: 0.1
+        });
+
+        const lazyVideos = document.querySelectorAll('video.lazy-video');
+        lazyVideos.forEach(video => {
+            lazyVideoObserver.observe(video);
+        });
+    } else {
+        // Fallback for older browsers
+        const lazyVideos = document.querySelectorAll('video.lazy-video');
+        lazyVideos.forEach(video => {
+            const sources = video.querySelectorAll('source');
+            sources.forEach(source => {
+                if (source.dataset.src) {
+                    source.src = source.dataset.src;
+                }
+            });
+            video.load();
+        });
+    }
+
     // 1. Particle / Sparks Canvas Animation
     const canvas = document.getElementById('sparksCanvas');
     const ctx = canvas.getContext('2d');
