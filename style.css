@@ -4367,7 +4367,7 @@ body {
 }
 
 /* ================================================
-   GLOBAL DISPLAY FONT WEIGHT REDUCTION (Disable Faux Bold & Thin Outlines)
+   GLOBAL DISPLAY FONT OVERRIDES (Matches image style)
    ================================================ */
 .logo-text,
 .elegant-title,
@@ -4386,10 +4386,10 @@ body {
 .main-footer .logo-text,
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Rubik Broken Fax', system-ui !important;
-    font-weight: 300 !important;
-    letter-spacing: 0.12em !important;
-    -webkit-text-stroke: 0.35px rgba(7, 14, 10, 0.9) !important;
-    text-shadow: 0 0 8px rgba(0, 255, 102, 0.05) !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.18em !important;
+    -webkit-text-stroke: none !important;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.9) !important;
 }
 
 
