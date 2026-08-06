@@ -383,8 +383,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
 
-        // Target Date: August 21, 2026 10:00:00 AM IST
-        const targetDate = new Date(2026, 7, 21, 10, 0, 0).getTime();
+        // Target Date: August 21, 2026 08:00:00 AM IST
+        const targetDate = new Date(2026, 7, 21, 8, 0, 0).getTime();
 
         function updateTimer() {
             const now = Date.now();
