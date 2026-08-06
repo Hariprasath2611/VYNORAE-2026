@@ -12,8 +12,8 @@
     --glass-bg: rgba(16, 36, 22, 0.35);
     --glass-border: rgba(0, 255, 102, 0.12);
     --font-display: 'Rubik Broken Fax', system-ui;
-    --font-body: 'Rubik Broken Fax', system-ui;
-    --font-ui: 'Rubik Broken Fax', system-ui;
+    --font-body: 'Share Tech Mono', monospace;
+    --font-ui: 'Orbitron', system-ui;
 }
 
 * {
@@ -21,8 +21,6 @@
     padding: 0;
     box-sizing: border-box;
     user-select: none;
-    font-family: 'Rubik Broken Fax', system-ui !important;
-    font-weight: 300 !important;
 }
 
 html, body {
@@ -42,6 +40,7 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-white);
     font-family: var(--font-body);
+    font-weight: 400;
     min-height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
@@ -4366,4 +4365,31 @@ body {
         margin-bottom: 18px !important;
     }
 }
+
+/* ================================================
+   GLOBAL DISPLAY FONT WEIGHT REDUCTION (Disable Faux Bold & Thin Outlines)
+   ================================================ */
+.logo-text,
+.elegant-title,
+.details-header,
+.hud-stat-number,
+.sequence-number,
+.sequence-title,
+.rules-title,
+.prize-position,
+.prize-amount,
+.award-title,
+.gauge-percent,
+.row-num,
+.row-value,
+.footer-links-col h4,
+.main-footer .logo-text,
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Rubik Broken Fax', system-ui !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.12em !important;
+    -webkit-text-stroke: 0.35px rgba(7, 14, 10, 0.9) !important;
+    text-shadow: 0 0 8px rgba(0, 255, 102, 0.05) !important;
+}
+
 
