@@ -3330,6 +3330,209 @@ body {
 
 
 /* ==========================================================================
+   FAQ & FOOTER SECTION STYLES
+   ========================================================================== */
+
+/* --- FAQ Section --- */
+.faq-section {
+    position: relative;
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    z-index: 10;
+}
+
+.faq-container {
+    max-width: 850px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 20px;
+}
+
+.faq-item {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-item:hover {
+    border-color: rgba(0, 255, 102, 0.35);
+    box-shadow: 0 0 25px rgba(0, 255, 102, 0.05);
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 22px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    cursor: pointer;
+    font-family: var(--font-ui);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--text-white);
+    transition: all 0.3s ease;
+}
+
+.faq-question span:first-child {
+    font-family: 'Orbitron', sans-serif !important;
+}
+
+.faq-icon {
+    font-family: monospace !important;
+    font-size: 18px;
+    color: var(--accent-green);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    text-shadow: 0 0 8px var(--accent-green-glow);
+}
+
+.faq-item.active {
+    border-color: var(--accent-green);
+    background: rgba(0, 255, 102, 0.02);
+    box-shadow: 0 0 30px rgba(0, 255, 102, 0.08);
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s;
+    padding: 0 28px;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 250px;
+    padding-bottom: 24px;
+}
+
+.faq-answer p {
+    font-family: var(--font-body);
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+/* --- Main Footer --- */
+.main-footer {
+    position: relative;
+    z-index: 10;
+    margin-top: 80px;
+    padding: 80px 0 40px 0;
+    border-top: 1px solid rgba(0, 255, 102, 0.15);
+    background: rgba(4, 9, 6, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-logo-col {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-tagline {
+    font-family: var(--font-body);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-muted);
+    max-width: 320px;
+}
+
+.footer-header {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: var(--accent-green);
+    margin-bottom: 25px;
+    text-shadow: 0 0 8px var(--accent-green-glow);
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links a {
+    font-family: var(--font-ui);
+    font-size: 12.5px;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--text-white);
+    text-shadow: 0 0 8px rgba(0, 255, 102, 0.4);
+    padding-left: 6px;
+}
+
+.footer-status-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-status-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: monospace !important;
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.footer-status-item span {
+    font-family: monospace !important;
+}
+
+.footer-bottom {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(0, 255, 102, 0.06);
+    text-align: center;
+    max-width: 1200px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.footer-bottom p {
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: rgba(163, 184, 173, 0.65);
+}
+
+
+/* ==========================================================================
    UNIFIED CARD AESTHETICS (Based on highlight-card.tsx Design Language)
    ========================================================================== */
 
@@ -3548,6 +3751,11 @@ body {
     }
     .sponsors-card.large-span {
         grid-column: span 1;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
     }
 }
 
@@ -3927,6 +4135,29 @@ body {
     .special-award-card:hover,
     .sponsors-card:hover {
         transform: scale(1.02) !important;
+    }
+
+    /* FAQ & Footer Mobile overrides */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    .footer-logo-col {
+        align-items: center;
+    }
+    .footer-status-col {
+        align-items: center;
+    }
+    .faq-question {
+        padding: 18px 20px;
+        font-size: 13.5px;
+    }
+    .faq-answer {
+        padding: 0 20px;
+    }
+    .faq-item.active .faq-answer {
+        padding-bottom: 18px;
     }
 }
 
