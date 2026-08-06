@@ -86,7 +86,7 @@ export default function ThemesCarousel() {
       <CoverflowCarousel
         slides={THEME_SLIDES}
         label="Hackathon Themes"
-        cardWidth="clamp(200px, 26vw, 300px)"
+        cardWidth="clamp(180px, 26vw, 300px)"
         rotate={42}
         depth={0.55}
         fade={0.12}
