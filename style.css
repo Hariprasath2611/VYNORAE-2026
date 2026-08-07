@@ -3193,7 +3193,7 @@ body {
     font-weight: 700;
     color: rgba(255, 255, 255, 0.55);
     letter-spacing: 2.5px;
-    padding: 10px 24px;
+    padding: 12px 30px;
     background: rgba(16, 36, 22, 0.35);
     border: 1px solid rgba(0, 255, 102, 0.08);
     border-radius: 6px;
@@ -3219,7 +3219,7 @@ body {
 }
 
 .strip-logo-img {
-    height: 30px;
+    height: 48px;
     width: auto;
     object-fit: contain;
     filter: brightness(1.1);
