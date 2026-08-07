@@ -3222,12 +3222,15 @@ body {
     height: 30px;
     width: auto;
     object-fit: contain;
-    filter: grayscale(1) brightness(1.2) opacity(0.6);
+    filter: brightness(1.1);
+    opacity: 0.95;
     transition: all 0.3s ease;
 }
 
 .logo-badge-item:hover .strip-logo-img {
-    filter: grayscale(0) brightness(1) opacity(1);
+    filter: brightness(1.3);
+    opacity: 1;
+    transform: scale(1.05);
 }
 
 /* --- SPONSOR CARDS --- */
