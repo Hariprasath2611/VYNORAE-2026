@@ -3218,6 +3218,18 @@ body {
     transform: translateY(-2px);
 }
 
+.strip-logo-img {
+    height: 30px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(1) brightness(1.2) opacity(0.6);
+    transition: all 0.3s ease;
+}
+
+.logo-badge-item:hover .strip-logo-img {
+    filter: grayscale(0) brightness(1) opacity(1);
+}
+
 /* --- SPONSOR CARDS --- */
 .sponsors-grid {
     display: grid;
@@ -4574,8 +4586,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .community-sponsors-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
@@ -4684,8 +4696,15 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 1024px) {
     .community-sponsors-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .community-sponsors-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 }
 
