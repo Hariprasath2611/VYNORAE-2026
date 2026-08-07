@@ -4576,56 +4576,128 @@ h1, h2, h3, h4, h5, h6 {
 .community-sponsors-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    max-width: 1100px;
+    gap: 30px;
+    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.community-sponsor-badge {
+.community-sponsor-card {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    padding: 16px 24px;
+    gap: 20px;
+    padding: 35px 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 255, 102, 0.08);
+    background: rgba(10, 24, 15, 0.45);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.community-sponsor-card:hover {
+    border-color: rgba(0, 255, 102, 0.35);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 255, 102, 0.08);
+}
+
+/* Sponsor logo frame inside card */
+.sponsor-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    width: 100%;
+    margin-bottom: 5px;
     background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(0, 255, 102, 0.1);
     border-radius: 12px;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    white-space: nowrap;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: all 0.3s ease;
 }
 
-.community-sponsor-badge:hover {
-    background: rgba(0, 255, 102, 0.04);
-    border-color: var(--accent-green);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 255, 102, 0.1);
+.community-sponsor-card:hover .sponsor-logo-wrapper {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(0, 255, 102, 0.15);
 }
 
-.community-sponsor-badge .badge-lbl {
+.community-sponsor-logo {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px rgba(0, 255, 102, 0.1));
+}
+
+.community-sponsor-name {
     font-family: var(--font-ui);
     font-weight: 700;
-    font-size: 13.5px;
-    color: var(--text-muted);
+    font-size: 14px;
+    color: var(--text-white);
     letter-spacing: 0.5px;
+    margin: 0;
+    line-height: 1.4;
     transition: color 0.3s ease;
 }
 
-.community-sponsor-badge:hover .badge-lbl {
-    color: var(--text-white);
+.community-sponsor-card:hover .community-sponsor-name {
+    color: var(--accent-green);
+    text-shadow: 0 0 8px rgba(0, 255, 102, 0.2);
 }
 
-@media (max-width: 960px) {
+/* Text-only card for JEC Student Club */
+.text-only-card {
+    justify-content: center;
+    background: rgba(0, 255, 102, 0.02);
+    border-color: rgba(0, 255, 102, 0.12);
+}
+
+.sponsor-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.text-only-card .badge-icon-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--accent-green);
+    box-shadow: 0 0 10px var(--accent-green);
+}
+
+.community-sponsor-type {
+    font-family: monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--accent-green);
+    opacity: 0.8;
+    text-transform: uppercase;
+}
+
+@media (max-width: 1024px) {
     .community-sponsors-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
     }
 }
 
 @media (max-width: 600px) {
     .community-sponsors-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .community-sponsor-card {
+        min-height: auto;
+        padding: 30px 20px;
     }
     .platinum-card {
         padding: 40px 20px;
