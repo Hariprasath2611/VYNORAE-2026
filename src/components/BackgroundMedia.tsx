@@ -2,7 +2,7 @@ import React from "react";
 
 export const BackgroundMedia: React.FC = () => {
   return (
-    <div className="video-container">
+    <div className="video-container" id="bgMediaParallax" data-parallax="0.25">
       <video
         autoPlay
         muted

@@ -3327,3 +3327,76 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/* ==========================================
+   ANIMATE ON SCROLL (AOS) STYLES
+   ========================================== */
+[data-aos] {
+    opacity: 0;
+    transition-property: opacity, transform;
+    transition-duration: 0.8s;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+[data-aos="fade-up"] {
+    transform: translateY(35px);
+}
+
+[data-aos="fade-in"] {
+    transform: translateY(0);
+}
+
+[data-aos="zoom-in"] {
+    transform: scale(0.93);
+}
+
+[data-aos="slide-left"] {
+    transform: translateX(35px);
+}
+
+[data-aos="slide-right"] {
+    transform: translateX(-35px);
+}
+
+/* Triggered State */
+[data-aos].aos-animate {
+    opacity: 1 !important;
+    transform: translateY(0) translateX(0) scale(1) !important;
+}
+
+/* Stagger Delays */
+[data-aos-delay="100"] { transition-delay: 0.1s; }
+[data-aos-delay="200"] { transition-delay: 0.2s; }
+[data-aos-delay="300"] { transition-delay: 0.3s; }
+[data-aos-delay="400"] { transition-delay: 0.4s; }
+[data-aos-delay="500"] { transition-delay: 0.5s; }
+
+/* ==========================================
+   LENIS SMOOTH SCROLL & PARALLAX STYLES
+   ========================================== */
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+}
+
+[data-parallax] {
+    will-change: transform;
+}
+
+
