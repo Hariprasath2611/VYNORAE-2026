@@ -207,30 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 5. Video Play Modal
-    const playBtn = document.querySelector('.play-btn');
-    const videoModal = document.getElementById('videoModal');
-    const modalClose = document.querySelector('.modal-close');
-    const modalOverlay = document.querySelector('.modal-overlay');
 
-    if (playBtn && videoModal) {
-        playBtn.addEventListener('click', () => {
-            videoModal.classList.add('active');
-        });
-
-        const closeModal = () => {
-            videoModal.classList.remove('active');
-            // Pause/reset iframe src to stop playback when closing
-            const iframe = videoModal.querySelector('iframe');
-            if (iframe) {
-                const src = iframe.src;
-                iframe.src = src;
-            }
-        };
-
-        modalClose.addEventListener('click', closeModal);
-        modalOverlay.addEventListener('click', closeModal);
-    }
 
     // 6. Refresh Button
     const refreshBtn = document.querySelector('.refresh-btn');
@@ -361,13 +338,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (displayCard) {
                 displayCard.classList.add('switching');
                 setTimeout(() => {
-                    if (displayTag) displayTag.textContent = `[ ${tag} ]`;
+                    if (displayTag) displayTag.textContent = tag;
                     if (displayTitle) displayTitle.textContent = title;
                     if (displayDesc) displayDesc.textContent = desc;
                     displayCard.classList.remove('switching');
                 }, 120);
             } else {
-                if (displayTag) displayTag.textContent = `[ ${tag} ]`;
+                if (displayTag) displayTag.textContent = tag;
                 if (displayTitle) displayTitle.textContent = title;
                 if (displayDesc) displayDesc.textContent = desc;
             }
@@ -496,4 +473,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 14. Scroll to Top (Hero) Button Handler
+    const scrollTopBtn = document.getElementById('scrollTopBtn') || document.querySelector('.scroll-top-btn');
+    if (scrollTopBtn) {
+        function checkScrollPosition() {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        }
+
+        window.addEventListener('scroll', checkScrollPosition, { passive: true });
+        checkScrollPosition(); // Check on initial page load
+
+        scrollTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
