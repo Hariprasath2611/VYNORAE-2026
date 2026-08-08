@@ -31,8 +31,9 @@ class Spark {
     this.colorBase = colors[Math.floor(Math.random() * colors.length)];
   }
 
-  update(width: number, height: number) {
-    this.y -= this.speedY;
+  update(width: number, height: number, velocity: number = 0) {
+    const boost = Math.min(Math.abs(velocity) * 0.12, 4);
+    this.y -= (this.speedY + boost);
     this.x += this.speedX;
     this.alpha -= this.fadeRate;
 
@@ -91,8 +92,9 @@ export function useSparksCanvas(canvasRef: React.RefObject<HTMLCanvasElement>) {
         return;
       }
       ctx.clearRect(0, 0, width, height);
+      const vel = (window as any).__lenisVelocity || 0;
       for (let i = 0; i < sparks.length; i++) {
-        sparks[i].update(width, height);
+        sparks[i].update(width, height, vel);
         sparks[i].draw(ctx);
       }
       animFrameId = requestAnimationFrame(animate);
