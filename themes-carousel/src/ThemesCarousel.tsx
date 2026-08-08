@@ -1,8 +1,8 @@
-import { CoverflowCarousel, type CoverflowSlide } from "@/components/ui/coverflow-carousel";
+﻿import { CoverflowCarousel, type CoverflowSlide } from "@/components/ui/coverflow-carousel";
 
 const THEME_SLIDES: CoverflowSlide[] = [
   {
-    src: "images/themes_idea/AI.png",
+    src: "images/themes_idea/AI.webp",
     alt: "Futuristic artificial intelligence neural brain core",
     title: "AI",
     subtitle: "INTEL_CORE // 01",
@@ -13,7 +13,7 @@ const THEME_SLIDES: CoverflowSlide[] = [
     ],
   },
   {
-    src: "images/themes_idea/W3.png",
+    src: "images/themes_idea/W3.webp",
     alt: "Decentralized blockchain network node",
     title: "Web3",
     subtitle: "WEB3_CHAIN // 02",
@@ -24,7 +24,7 @@ const THEME_SLIDES: CoverflowSlide[] = [
     ],
   },
   {
-    src: "images/themes_idea/Cybersecurity.png",
+    src: "images/themes_idea/Cybersecurity.webp",
     alt: "Digital tech security shield",
     title: "Cybersecurity",
     subtitle: "SECURE_SHIELD // 03",
@@ -35,7 +35,7 @@ const THEME_SLIDES: CoverflowSlide[] = [
     ],
   },
   {
-    src: "images/themes_idea/Healthcare.png",
+    src: "images/themes_idea/Healthcare.webp",
     alt: "Futuristic medical diagnosis and health graphics",
     title: "Healthcare",
     subtitle: "BIO_METRICS // 04",
@@ -46,7 +46,7 @@ const THEME_SLIDES: CoverflowSlide[] = [
     ],
   },
   {
-    src: "images/themes_idea/Legal Tech.png",
+    src: "images/themes_idea/Legal Tech.webp",
     alt: "Smart contract scroll and scales of justice",
     title: "Legal Tech",
     subtitle: "LEGAL_TECH // 05",
@@ -57,7 +57,7 @@ const THEME_SLIDES: CoverflowSlide[] = [
     ],
   },
   {
-    src: "images/themes_idea/Fintech.png",
+    src: "images/themes_idea/Fintech.webp",
     alt: "Financial charts and stock market indicators",
     title: "FinTech",
     subtitle: "FIN_SYSTEM // 06",
@@ -68,7 +68,7 @@ const THEME_SLIDES: CoverflowSlide[] = [
     ],
   },
   {
-    src: "images/themes_idea/Open Innovations.png",
+    src: "images/themes_idea/Open Innovations.webp",
     alt: "Fusion core representing creative innovation ideas",
     title: "Open Innovations",
     subtitle: "OPEN_CORE // 07",
@@ -97,3 +97,4 @@ export default function ThemesCarousel() {
     </div>
   );
 }
+

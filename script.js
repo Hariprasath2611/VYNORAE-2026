@@ -124,15 +124,47 @@ document.addEventListener('DOMContentLoaded', () => {
         sparks[i].y = Math.random() * height;
     }
 
+    let canvasVisible = true;
+    let animFrameId = null;
+
     function animate() {
+        if (!canvasVisible || document.hidden) {
+            animFrameId = null;
+            return;
+        }
         ctx.clearRect(0, 0, width, height);
         for (let i = 0; i < sparkCount; i++) {
             sparks[i].update();
             sparks[i].draw();
         }
-        requestAnimationFrame(animate);
+        animFrameId = requestAnimationFrame(animate);
     }
-    animate();
+
+    function startAnimation() {
+        if (!animFrameId && canvasVisible && !document.hidden) {
+            animFrameId = requestAnimationFrame(animate);
+        }
+    }
+
+    if ('IntersectionObserver' in window && canvas) {
+        const canvasObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                canvasVisible = entry.isIntersecting;
+                if (canvasVisible) {
+                    startAnimation();
+                }
+            });
+        }, { threshold: 0.01 });
+        canvasObserver.observe(canvas);
+    }
+
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden && canvasVisible) {
+            startAnimation();
+        }
+    });
+
+    startAnimation();
 
     // 2. Navigation Link Activation
     const navLinks = document.querySelectorAll('.nav-link');
